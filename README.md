@@ -2,13 +2,15 @@
 
 ### 基本信息
 
+Vuex:统一管理各组件共享数据的工具
+
 共享数据存在state中，可以在组件中引用显示，state中的状态不能直接修改，只能借助mutations进行修改。mutations只能执行同步操作，执行异步操作需要通过actions，然后将数据提交给mutations进行修改
 
 [![https://gitee.com/ZZH6/picture/raw/master/Vue/4UOE!^!ok078.png](https://gitee.com/ZZH6/picture/raw/master/Vue/4UOE!^!ok078.png)](https://gitee.com/ZZH6/picture/raw/master/Vue/4UOE!^!ok078.png)
 
 ### state
 
-公共数据状态    
+存放数据且可以显示在组件中    
 
 直接使用方式：this.$store.state.count
 
@@ -16,7 +18,7 @@
 
 ### getters
 
-修改state数据，比如修改数据的嵌套层级，方便使用
+获取数据的辅助方法,用来优化state中的数据显示,方便使用
 
 注：一般在data或computed里使用
 
@@ -34,7 +36,7 @@
 
 1、actions可以执行异步操作
 
-2、actions不可以直接操作state的状态，需要使用mutations才可以
+2、actions不可以直接操作state的状态，需要调用mutation修改state数据
 
 3、会返回一个promise，即可以接.then
 
